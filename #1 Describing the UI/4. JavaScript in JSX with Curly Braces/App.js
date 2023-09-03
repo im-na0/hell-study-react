@@ -10,7 +10,7 @@ const person = {
 export default function TodoList() {
   return (
     <div style={person.theme}>
-      <h1>{person}'s Todos</h1>
+      <h1>{person.name}'s Todos</h1>
       <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
       <ul>
         <li>Improve the videophone</li>
@@ -27,6 +27,11 @@ const person = {
   theme: {
     backgroundColor: 'black',
     color: 'pink'
+  },
+  image: {
+    className : "avatar",
+    src : "https://i.imgur.com/7vQD0fPs.jpg",
+    alt : "Gregorio Y. Zara"
   }
 };
 
@@ -35,9 +40,9 @@ export default function TodoList() {
     <div style={person.theme}>
       <h1>{person.name}'s Todos</h1>
       <img
-        className="avatar"
-        src="https://i.imgur.com/7vQD0fPs.jpg"
-        alt="Gregorio Y. Zara"
+        className={person.image.className}
+        src={person.image.src}
+        alt={person.image.alt}
       />
       <ul>
         <li>Improve the videophone</li>
@@ -66,7 +71,7 @@ export default function TodoList() {
       <h1>{person.name}'s Todos</h1>
       <img
         className="avatar"
-        src="{baseUrl}{person.imageId}{person.imageSize}.jpg"
+        src={ baseUrl +  person.imageId + person.imageSize + '.jpg'}
         alt={person.name}
       />
       <ul>
